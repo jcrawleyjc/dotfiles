@@ -27,7 +27,6 @@ git-init:
 	rm -rf ./.gitconfig
 	git init
 	git remote add origin git@github.com:jcrawleyjc/dotfiles.git
-	git branch --set-upstream-to=origin/master main
 
 push-changes:
 	git add -A
