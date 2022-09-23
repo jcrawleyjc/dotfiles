@@ -1,7 +1,7 @@
 date=`date`
 
-init: verify git-init force-restore
-restore: brew-cleanup force-restore
+init: git-init force-restore
+restore: brew-cleanup pull-changes brew-bundle
 update: brew-dump push-changes
 
 verify:
