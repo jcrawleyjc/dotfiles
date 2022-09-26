@@ -24,8 +24,9 @@ git-init:
 	rm -rf ./.git
 	git init
 	git remote add origin git@github.com:jcrawleyjc/dotfiles.git
+	git fetch origin
 	git checkout master
-  git pull origin master
+	git pull origin master
 
 pull-changes:
 	git pull origin master
