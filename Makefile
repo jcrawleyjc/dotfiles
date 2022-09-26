@@ -31,6 +31,11 @@ git-init:
 pull-changes:
 	git pull origin master
 	git submodule update --recursive --remote
+	
+push-changes:
+	git add -A
+	git commit -m "dotfiles update on ${date}"
+	git push origin master
 
 brew-bundle:
 	brew bundle --verbose --global
