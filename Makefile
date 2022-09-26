@@ -23,9 +23,9 @@ force-restore:
 git-init:
 	rm -rf ./.git
 	git init
-	git checkout master
 	git remote add origin git@github.com:jcrawleyjc/dotfiles.git
-	git pull --recurse-submodules
+	git checkout master
+  git pull origin master
 
 pull-changes:
 	git pull origin master
