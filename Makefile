@@ -12,8 +12,6 @@ verify:
 
 install-homebrew:
 	/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
-	echo 'eval "$$(/opt/homebrew/bin/brew shellenv)"' > "$$HOME/.zprofile"
-	eval "$$(/opt/homebrew/bin/brew shellenv)"
 
 force-restore:
 	git fetch
@@ -24,14 +22,10 @@ force-restore:
 
 git-init:
 	rm -rf ./.git
-	rm -rf ./.gitconfig
 	git init
+	git checkout master
 	git remote add origin git@github.com:jcrawleyjc/dotfiles.git
-
-push-changes:
-	git add -A
-	git commit -m "dotfiles update on ${date}"
-	git push origin master
+	git pull --recurse-submodules
 
 pull-changes:
 	git pull origin master
